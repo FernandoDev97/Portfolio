@@ -9,7 +9,7 @@ interface AboutItemProps {
 
 const AboutItem = ({title, description, descriptionTwo, descriptionThree}: AboutItemProps) => {
     return (
-        <ItemContainer>
+        <ItemContainer data-aos='fade-up'>
             <div>
                 <h1>{title}</h1>
                 <hr />

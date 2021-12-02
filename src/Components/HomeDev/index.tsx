@@ -4,7 +4,7 @@ import Card from '../templates/Cards';
 
 function HomeDev() {
   return (
-    <Container>
+    <Container data-aos='fade-up'>
       <img src={image} alt="Minha foto" />
       <div>
         <TextContainer>

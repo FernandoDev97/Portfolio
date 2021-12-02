@@ -16,9 +16,9 @@ function About() {
         />
         <AboutItem 
         title='Experiências' 
-        description='FRONT-END DEVELOPER JUNIOR'
+        description='FRONT-END DEVELOPER JÚNIOR'
         descriptionTwo='Foram 4 meses de experiêcia ultilizando:
-        Metodologias Ágeis (SCRUM)
+        Metodologias Ágeis (SCRUM),
         Consumo de API,
         Next.js,
         React.js,
@@ -33,7 +33,7 @@ function About() {
         title='Habilidades' 
         description='-Linguagens: Java, JavaScript, TypeScript, HTML, CSS'
         descriptionTwo='-Experiência com React.js, Next.js, 
-        Styled-components, Chakra UI, Firebase, Tailwind Css
+        Styled-components, Chakra UI, Firebase, Tailwind Css,
         Bootstrap, Axios request, SCRUM.'
         descriptionThree='-Experiência com Linux e Windows.'
         />
@@ -41,9 +41,9 @@ function About() {
         title='Interesses' 
         description='Meu principal interesse pessoal inclue
         sempre me manter qualificado para mercado de trabalho.'
-        descriptionTwo='Sou um desenvolvedor Web e um eterno
+        descriptionTwo='Sou um programador Web e um eterno
         estudante de desenvolvimento de
-        softwares interessado em projetos que
+        softwares, interessado em projetos que
         requerem raciocínio lógico, conceitual e
         analítico. Gostaria de trabalhar com startups
         ou em grandes empresas.'

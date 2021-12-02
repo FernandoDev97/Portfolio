@@ -43,13 +43,14 @@ export const KnowledgeContainer = styled.div`
     }
 
     @media(max-width: 1000px) {
+        gap: .5rem;
         p {
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
 
         svg {
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 4rem;
+            height: 4rem;
         }
     }
 

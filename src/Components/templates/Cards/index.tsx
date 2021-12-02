@@ -4,7 +4,7 @@ import { CodeItem, InfosContainer } from './styles';
 const Card = () => {
     return (
         <InfosContainer>
-            <CodeItem >
+            <CodeItem data-aos='zoom-in'>
                 <span className='comment'>// Informações pessoais</span>
                 <span className='purple'>Infos</span> {'\u007b'}
                 <div>
@@ -15,7 +15,7 @@ const Card = () => {
                 </div>
                 {'\u007D'}
             </CodeItem>
-            <CodeItem >
+            <CodeItem data-aos='zoom-in'>
                 <span className='comment'>// Soft Skills</span>
                 <span className='purple'>Dev Front-end</span> {'\u007b'}
                 <div>

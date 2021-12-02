@@ -11,6 +11,7 @@ export const Container = styled.section`
     > img {
         width: 38rem;
         border-radius: 50px;
+        position: relative;
     }
 
     > div {
@@ -41,7 +42,7 @@ export const Container = styled.section`
         flex-direction: column-reverse;
 
         > img {
-            display: none;
+          display: none;
         }
         
         > div {

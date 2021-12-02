@@ -13,10 +13,39 @@ export const Container = styled.header`
     height: 4rem;
     border-bottom: 1px solid ${props => props.theme.backgroundLight};
 
+    > img {
+        display: none;
+        position: relative;
+    }
+
     ul {
         display: flex;
         gap: 2rem;
         align-items: center;
+    }
+
+    @media(max-width: 700px) {
+        > img {
+            position: absolute;
+            display: flex;
+            top: 4rem;
+            left: 1rem;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+        }
+    }
+
+    @media(max-width: 420px) {
+        > img {
+            position: absolute;
+            display: flex;
+            top: 4rem;
+            left: .7rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+        }
     }
 `;
 

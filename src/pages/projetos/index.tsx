@@ -1,39 +1,79 @@
+import { GetStaticProps } from "next";
 import Header from "../../Components/Header";
 import ProjectItem from "../../Components/ProjectItem";
+import { getPrismicClient } from "../../services/prismic";
 import { ProjetosContainer } from "../../styles/ProjetosContainer";
+import Prismic from '@prismicio/client'
+import Head from 'next/head'
 
-export default function Projetos() {
+interface IProject {
+  slug: string
+  title: string
+  type: string
+  description: string
+  link: string
+  thumbnail: string
+}
+
+interface ProjectsProps {
+  projects: IProject[]
+}
+
+export default function Projetos({ projects }: ProjectsProps) {
   return (
 
     <ProjetosContainer>
-        <Header/>
 
-        <main className='container'>
-            <ProjectItem 
-            title='Projeto 01'
-            type='Website'
-            slug='teste'
-            imgUrl='https://media.slidesgo.com/storage/7277505/responsive-images/0-web-project-proposal___media_library_original_1600_900.jpg'
-            />
-             <ProjectItem 
-            title='Projeto 02'
-            type='Website'
-            slug='teste'
-            imgUrl='https://media.slidesgo.com/storage/7277505/responsive-images/0-web-project-proposal___media_library_original_1600_900.jpg'
-            />
-             <ProjectItem 
-            title='Projeto 03'
-            type='Website'
-            slug='teste'
-            imgUrl='https://media.slidesgo.com/storage/7277505/responsive-images/0-web-project-proposal___media_library_original_1600_900.jpg'
-            />
-             <ProjectItem 
-            title='Projeto 04'
-            type='Website'
-            slug='teste'
-            imgUrl='https://media.slidesgo.com/storage/7277505/responsive-images/0-web-project-proposal___media_library_original_1600_900.jpg'
-            />
-        </main>
-    </ProjetosContainer>    
+      <Head>
+        <title>Projetos | Meu Portfólio</title>
+        <meta
+          name="description"
+          content="Aqui eu apresento todos os meus projetos pessoais!"
+        />
+        <meta property="og:image" content="/ogimage.png" />
+        <meta property="og:image:secure_url" content="/ogimage.png" />
+        <meta name="twitter:image" content="/ogimage.png" />
+        <meta name="twitter:image:src" content="/ogimage.png" />
+        <meta
+          property="og:description"
+          content="Aqui eu apresento todos os meus projetos pessoais!"
+        />
+      </Head>
+
+      <Header />
+      <main className='container'>
+        {projects.map(project => (
+          <ProjectItem
+            key={project.slug}
+            title={project.title}
+            type={project.type}
+            slug={project.slug}
+            imgUrl={project.thumbnail}
+          />
+        ))}
+      </main>
+    </ProjetosContainer>
   );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient()
+
+  const response = await prismic.query(
+    [Prismic.Predicates.at('document.type', 'projet')],
+    { orderings: '[document.first_publication_date desc]' }
+  )
+
+  const projects = response.results.map(project => ({
+    slug: project.uid,
+    title: project.data.title,
+    type: project.data.type,
+    description: project.data.description,
+    link: project.data.link.url,
+    thumbnail: project.data.thumbnail.url
+  }))
+
+  return {
+    props: { projects }, revalidate: 86400
+  }
 }

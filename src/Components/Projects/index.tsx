@@ -3,30 +3,35 @@ import ProjectItems from '../templates/ProjectItems';
 import { Container } from './styles';
 import Link from 'next/link'
 
-function Projects() {
+interface IProject {
+  slug: string
+  title: string
+  type: string
+  description: string
+  link: string
+  thumbnail: string
+}
+
+interface ProjectsProps {
+  projects: IProject[]
+}
+
+function Projects({ projects }: ProjectsProps) {
+  
   return (
     <Container>
       <SectionTitle title='Últimos projetos'/>
-
       <section>
-        <ProjectItems
-          img='https://media.slidesgo.com/storage/7277505/responsive-images/0-web-project-proposal___media_library_original_1600_900.jpg'
-          title='Projeto 1'
-          type='Website'
-          slug='teste'
+        {projects.slice(0, 3).map(project => (
+          <ProjectItems
+          key={project.slug}
+          img={project.thumbnail}
+          title={project.title}
+          type={project.type}
+          slug={project.slug}
         />
-        <ProjectItems
-          img='https://media.slidesgo.com/storage/7277505/responsive-images/0-web-project-proposal___media_library_original_1600_900.jpg'
-          title='Projeto 1'
-          type='Website'
-          slug='teste'
-        />
-        <ProjectItems
-          img='https://media.slidesgo.com/storage/7277505/responsive-images/0-web-project-proposal___media_library_original_1600_900.jpg'
-          title='Projeto 1'
-          type='Website'
-          slug='teste'
-        />
+        ))}
+        
       </section>
       
       <button type='button'>

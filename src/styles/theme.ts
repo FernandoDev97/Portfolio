@@ -9,7 +9,8 @@ const theme = {
   textLight: '#E6E6E6',
   border: '#313958',
   inputBackground: '#1E253E',
-  error: '#d45d5d'
+  error: '#d45d5d',
+  success: '#17D7A0'
 };
 
 export default theme;

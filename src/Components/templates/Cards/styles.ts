@@ -14,7 +14,7 @@ export const CodeItem = styled.pre`
     color: #FFF;
     width: 26rem;
     align-self: flex-start;
-    transition: 1s;
+    transition: 1s !important;
 
     @media(max-width: 1450px) {
         width: 21rem;
@@ -28,11 +28,17 @@ export const CodeItem = styled.pre`
 
     @media(max-width: 700px) {
         width: 100%;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         
     }
 
-    @media(max-width: 420px) {
+    @media(max-width: 450px) {
+        width: 100%;
+        padding: 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    @media(max-width: 350px) {
         width: 100%;
         padding: 0.2rem;
         font-size: 0.6rem;
