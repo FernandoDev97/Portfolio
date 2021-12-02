@@ -28,10 +28,10 @@ export const Container = styled.header`
         > img {
             position: absolute;
             display: flex;
-            top: 4rem;
+            top: 0;
             left: 1rem;
-            width: 4rem;
-            height: 4rem;
+            width: 3.7rem;
+            height: 3.7rem;
             border-radius: 50%;
         }
     }
@@ -40,10 +40,10 @@ export const Container = styled.header`
         > img {
             position: absolute;
             display: flex;
-            top: 4rem;
-            left: .7rem;
-            width: 3.5rem;
-            height: 3.5rem;
+            top: 0;
+            left: .4rem;
+            width: 3.7rem;
+            height: 3.7rem;
             border-radius: 50%;
         }
     }
