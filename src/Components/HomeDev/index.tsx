@@ -9,7 +9,7 @@ function HomeDev() {
       <div>
         <TextContainer>
           <h1>Olá</h1>
-          <h2>Seja bem vindo ao meu Portifólio</h2>
+          <h2>Seja bem vindo ao meu Portfólio</h2>
         </TextContainer>
         <Card/>
       </div>
