@@ -19,7 +19,7 @@ const Card = () => {
                 <span className='comment'>// Soft Skills</span>
                 <span className='purple'>Dev Front-end</span> {'\u007b'}
                 <div>
-                    Linguagens: <span className='blue'>JavaScript, TypeScript, HTML, CSS</span>
+                    Linguagens: <span className='blue'>JavaScript, TypeScript, HTML, CSS, Tailwind</span>
                 </div>
                 <div>
                     Frameworks/Libs: <span className='blue'>Next.Js, React</span>
